@@ -1,0 +1,11 @@
+HDFS Blocks:
+
+Hadoop uses blocks to store a file or parts of a file.
+
+A Hadoop block is a file on the underlying filesystem. Since the underlying filesystem stores files as blocks, one Hadoop block may consist of many blocks in the underlying file system. Blocks are large. They default to 64 megabytes each and most systems run with block sizes of 128 megabytes or larger.
+
+Blocks have several advantages:
+
+Firstly, they are fixed in size. This makes it easy to calculate how many can fit on a disk.
+
+Secondly, by being made up of blocks that can be spread over multiple nodes, a file can be larger than any single disk in the cluster. HDFS blocks also don't waste space. If a file is not an even multiple of the block size, the block containing the remainder does not occupy the space of an entire block.
